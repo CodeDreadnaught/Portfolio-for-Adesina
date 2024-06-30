@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    /* outline: 1px solid red;   */
+  }
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-size: 1.6rem;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  input , textarea {
+    background: transparent;
+  }
+  input:focus, textarea:focus, select:focus, button:focus {
+    outline: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    @apply hidden;
+  }
+}
+
+@layer components {
+  .app-container {
+    transition: all 0.35s linear;
+  }
+  .app-container.dark {
+    background: black;
+    color: white;
+  }
+  .skill-section {
+    scroll-behavior: smooth;
+  }
+  .skill-section::-webkit-scrollbar {
+    @apply hidden;
+  }
+  .app-container.dark {
+    nav {
+      background: black;
+      box-shadow: 0 0 0.2rem rgba(255, 255, 255,1);
+    }
+    .toggle-button-inner-circle {
+      transform: translateX(100%);
+    }
+    .toggle-button {
+      background: white;
+      border: 1px solid white;
+    }
+    .toggle-button-inner-circle {
+      background: black;
+    }
+    .skill-section-card {
+      border: 1px solid white;
+    }
+  }
+}
+
+@layer utilities {
+  .mode-transistion {
+    transition: all 0.35s linear;
+}
+.center {
+  @apply grid place-items-center;
+}
+}
